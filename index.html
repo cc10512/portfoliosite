@@ -9,8 +9,19 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
+                <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+  <script>
+    var iOS = /iPad|iPhone|iPod/.test(navigator.platform);
+    var Android = /Android/.test(navigator.userAgent);
+    var fburl = "http://www.facebook.com/aprocellum";
+    if(iOS || Android) {
+      fburl = "fb://applinks?al_applink_data=%7B%22target_url%22%3A%22http%3A%5C%2F%5C%2Fwww.facebook.com%5C%2Faprocellum%2F%22%7D";
+    }
+    function fblink() {
+    document.write("<li><a href=\""+ fburl +"\" class=\"icon fa-facebook\"><span class=\"label\">Facebook</span></a></li>");
+    }
+  </script>
+</head>
 	<body>
 
 		<div id="wrapper">
@@ -58,7 +69,7 @@
 							<h2>EXPERIENTIAL</h2>
 							<a href="images/Website/a4_thumb.png" class="image"><img src="images/Website/a4_thumb.jpg" alt=""></a>
 						</article>
-						
+
 						<article class="item thumb" data-width="448">
 							<h2>GRT LOGO</h2>
 							<a href="images/Website/GRT.png" class="image"><img src="images/Website/GRT.png" alt=""></a>
@@ -122,12 +133,13 @@
 			<div id="footer">
 				<div class="left">
 					<p>I'm a student at Carnegie Mellon University's <a href="http://soa.cmu.edu"> School of Architecture</a>, always on the lookout for new experiences. <br />
-					Resume/CV included <a href="images/dan_resume.pdf">here</a>.</p>
+					Resume/CV included <a href="images/Dan_Resume.pdf">here</a>.</p>
 					<h2> Background image courtesy Kimchi and Chips,<i> Molecular Cloud<i/>.</h2>
 				</div>
 				<div class="right">
 					<ul class="contact">
-						<li><a href="http://www.facebook.com/aprocellum" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                          <script>fblink();</script>
+					  <noscript><li><a href="http://www.facebook.com/aprocellum" class="icon fa-facebook"><span class="label">Facebook</span></a></li></noscript>
 						<li><a href="http://www.pinterest.com/dancascaval/" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
 						<li><a href="mailto:dcascava@andrew.cmu.edu" class="icon fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
